@@ -907,7 +907,7 @@ test_that("cross_validate_concentration", {
   # Define an error sampler.
 
   local_error_sampler <- function(point) {
-    c(0, 0, 0)
+    c(1, 0, 0)
   }
 
   # Simulate a rigid regression.

@@ -23,8 +23,6 @@
 #' }
 #' @docType package
 #' @name nprotreg
-#' @importFrom expm expm
-#' @importFrom expm logm
 #' @importFrom methods new
 #' @importFrom stats nlm
 #' @importFrom stats optimize

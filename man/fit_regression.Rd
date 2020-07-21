@@ -4,10 +4,16 @@
 \alias{fit_regression}
 \title{Fits a 3D Spherical Regression.}
 \usage{
-fit_regression(evaluation_points, explanatory_points, response_points,
-  concentration, weights_generator = weight_explanatory_points,
-  number_of_expansion_terms = 1, number_of_iterations = 1,
-  allow_reflections = FALSE)
+fit_regression(
+  evaluation_points,
+  explanatory_points,
+  response_points,
+  concentration,
+  weights_generator = weight_explanatory_points,
+  number_of_expansion_terms = 1,
+  number_of_iterations = 1,
+  allow_reflections = FALSE
+)
 }
 \arguments{
 \item{evaluation_points}{An \emph{n}-by-3 matrix whose rows contain
@@ -156,8 +162,8 @@ fitted_model <- fit_regression(
 # second evaluation point fitted at
 # the first iteration.
 
-cat("Point fitted at iteration 1 corresponding to the second evaluation point: \\n")
-cat(fitted_model[[1]]$fitted_response_points[2, ])
+cat("Point fitted at iteration 1 corresponding to the second evaluation point: \n")
+cat(fitted_model[[1]]$fitted_response_points[2, ], "\n")
 
 \dontrun{
 # Create some plots to view the results.
@@ -263,11 +269,12 @@ Journal of the American Statistical Association,
 DOI: \href{https://doi.org/10.1080/01621459.2017.1421542}{10.1080/01621459.2017.1421542}
 }
 \seealso{
-Other Regression functions: \code{\link{cross_validate_concentration}},
-  \code{\link{get_equally_spaced_points}},
-  \code{\link{get_skew_symmetric_matrix}},
-  \code{\link{simulate_regression}},
-  \code{\link{simulate_rigid_regression}},
-  \code{\link{weight_explanatory_points}}
+Other Regression functions: 
+\code{\link{cross_validate_concentration}()},
+\code{\link{get_equally_spaced_points}()},
+\code{\link{get_skew_symmetric_matrix}()},
+\code{\link{simulate_regression}()},
+\code{\link{simulate_rigid_regression}()},
+\code{\link{weight_explanatory_points}()}
 }
-
+\concept{Regression functions}

@@ -4,8 +4,11 @@
 \alias{simulate_regression}
 \title{Simulates a 3D Spherical Regression.}
 \usage{
-simulate_regression(explanatory_points, local_rotation_composer,
-  local_error_sampler)
+simulate_regression(
+  explanatory_points,
+  local_rotation_composer,
+  local_error_sampler
+)
 }
 \arguments{
 \item{explanatory_points}{An \emph{m}-by-3 matrix whose rows contain
@@ -96,15 +99,16 @@ response_points <- simulate_regression(explanatory_points,
 # Get the response point corresponding to the second
 # explanatory point.
 
-cat("Response point corresponding to the second explanatory point: \\n")
-cat(response_points[2, ])
+cat("Response point corresponding to the second explanatory point: \n")
+cat(response_points[2, ], "\n")
 }
 \seealso{
-Other Regression functions: \code{\link{cross_validate_concentration}},
-  \code{\link{fit_regression}},
-  \code{\link{get_equally_spaced_points}},
-  \code{\link{get_skew_symmetric_matrix}},
-  \code{\link{simulate_rigid_regression}},
-  \code{\link{weight_explanatory_points}}
+Other Regression functions: 
+\code{\link{cross_validate_concentration}()},
+\code{\link{fit_regression}()},
+\code{\link{get_equally_spaced_points}()},
+\code{\link{get_skew_symmetric_matrix}()},
+\code{\link{simulate_rigid_regression}()},
+\code{\link{weight_explanatory_points}()}
 }
-
+\concept{Regression functions}

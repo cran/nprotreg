@@ -77,15 +77,16 @@ weights <- weight_explanatory_points(evaluation_points,
 # Get the weights assigned to the explanatory points
 # while analyzing the second evaluation point.
 
-cat("Weights assigned while analyzing the second evaluation point: \\n")
-cat(weights[, 2])
+cat("Weights assigned while analyzing the second evaluation point: \n")
+cat(weights[, 2], "\n")
 }
 \seealso{
-Other Regression functions: \code{\link{cross_validate_concentration}},
-  \code{\link{fit_regression}},
-  \code{\link{get_equally_spaced_points}},
-  \code{\link{get_skew_symmetric_matrix}},
-  \code{\link{simulate_regression}},
-  \code{\link{simulate_rigid_regression}}
+Other Regression functions: 
+\code{\link{cross_validate_concentration}()},
+\code{\link{fit_regression}()},
+\code{\link{get_equally_spaced_points}()},
+\code{\link{get_skew_symmetric_matrix}()},
+\code{\link{simulate_regression}()},
+\code{\link{simulate_rigid_regression}()}
 }
-
+\concept{Regression functions}

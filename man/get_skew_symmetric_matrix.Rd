@@ -41,11 +41,12 @@ m <- get_skew_symmetric_matrix(independent_components)
 \seealso{
 \url{https://en.wikipedia.org/wiki/Skew-symmetric_matrix}.
 
-Other Regression functions: \code{\link{cross_validate_concentration}},
-  \code{\link{fit_regression}},
-  \code{\link{get_equally_spaced_points}},
-  \code{\link{simulate_regression}},
-  \code{\link{simulate_rigid_regression}},
-  \code{\link{weight_explanatory_points}}
+Other Regression functions: 
+\code{\link{cross_validate_concentration}()},
+\code{\link{fit_regression}()},
+\code{\link{get_equally_spaced_points}()},
+\code{\link{simulate_regression}()},
+\code{\link{simulate_rigid_regression}()},
+\code{\link{weight_explanatory_points}()}
 }
-
+\concept{Regression functions}

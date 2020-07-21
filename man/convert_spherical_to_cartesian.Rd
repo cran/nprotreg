@@ -36,6 +36,7 @@ cartesian_coords <- convert_spherical_to_cartesian(spherical_coords)
 \seealso{
 \url{http://mathworld.wolfram.com/SphericalCoordinates.html}.
 
-Other Conversion functions: \code{\link{convert_cartesian_to_spherical}}
+Other Conversion functions: 
+\code{\link{convert_cartesian_to_spherical}()}
 }
-
+\concept{Conversion functions}

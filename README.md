@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # Introduction
 
 This is `nprotreg`, an `R` package that exploits
@@ -44,16 +42,16 @@ number_of_explanatory_points <- 50
 explanatory_points <- get_equally_spaced_points(
   number_of_explanatory_points)
 
-### Define a matrix of response points by simulation.
+# Define a matrix of response points by simulation.
 
-# define the reponse _local_ rotation model (eg Model 2 in Table 1 of [Di Marzio, Panzera & Taylor (2018)])
+# - define the response local rotation model (eg Model 2 in Table 1 of [Di Marzio, Panzera & Taylor (2018)])
 
 local_rotation_composer <- function(point) {
   independent_components <- (1 / 2) *
     c(exp(2.0 * point[3]), - exp(2.0 * point[2]), exp(2.0 * point[1]))
 }
 
-# define rotation (error) perturbation model using random skew symmetric matrix:
+# - define a rotation (error) perturbation model using random skew symmetric matrix:
 
 local_error_sampler <- function(point) {
   rnorm(3,mean=0,sd=.25)

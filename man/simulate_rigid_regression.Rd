@@ -4,8 +4,11 @@
 \alias{simulate_rigid_regression}
 \title{Simulates a Rigid 3D Spherical Regression.}
 \usage{
-simulate_rigid_regression(explanatory_points, rotation_matrix,
-  local_error_sampler)
+simulate_rigid_regression(
+  explanatory_points,
+  rotation_matrix,
+  local_error_sampler
+)
 }
 \arguments{
 \item{explanatory_points}{An \emph{m}-by-3 matrix whose rows contain
@@ -55,7 +58,6 @@ equal to \code{3}.
 }
 \examples{
 library(nprotreg)
-library(expm)
 
 # Define a matrix of explanatory points.
 
@@ -72,10 +74,10 @@ explanatory_points <- rbind(
 
 # Define a rotation matrix.
 
-rotation_matrix <- expm(
-  get_skew_symmetric_matrix(
-    cbind(-0.36, 0.48, -0.8)
-  )
+rotation_matrix <- rbind(
+    cbind(-0.69492055764131177575, 0.71352099052778772403, 0.08929285886191218324),
+    cbind(-0.19200697279199935297, -0.30378504433947051133, 0.93319235382364695841),
+    cbind(0.69297816774177023458, 0.63134969938371787723, 0.34810747783026463331)
 )
 
 # Define a local error sampler.
@@ -95,15 +97,16 @@ response_points <- simulate_rigid_regression(explanatory_points,
 # Get the response point corresponding to the second
 # explanatory point.
 
-cat("Response point corresponding to the second explanatory point: \\n")
-cat(response_points[2, ])
+cat("Response point corresponding to the second explanatory point: \n")
+cat(response_points[2, ], "\n")
 }
 \seealso{
-Other Regression functions: \code{\link{cross_validate_concentration}},
-  \code{\link{fit_regression}},
-  \code{\link{get_equally_spaced_points}},
-  \code{\link{get_skew_symmetric_matrix}},
-  \code{\link{simulate_regression}},
-  \code{\link{weight_explanatory_points}}
+Other Regression functions: 
+\code{\link{cross_validate_concentration}()},
+\code{\link{fit_regression}()},
+\code{\link{get_equally_spaced_points}()},
+\code{\link{get_skew_symmetric_matrix}()},
+\code{\link{simulate_regression}()},
+\code{\link{weight_explanatory_points}()}
 }
-
+\concept{Regression functions}

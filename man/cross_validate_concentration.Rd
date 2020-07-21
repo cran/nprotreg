@@ -4,11 +4,15 @@
 \alias{cross_validate_concentration}
 \title{Cross-validates The Concentration Parameter In A 3D Spherical Regression.}
 \usage{
-cross_validate_concentration(concentration_upper_bound = 10,
-  explanatory_points, response_points,
+cross_validate_concentration(
+  concentration_upper_bound = 10,
+  explanatory_points,
+  response_points,
   weights_generator = weight_explanatory_points,
-  number_of_expansion_terms = 1, number_of_iterations = 1,
-  allow_reflections = FALSE)
+  number_of_expansion_terms = 1,
+  number_of_iterations = 1,
+  allow_reflections = FALSE
+)
 }
 \arguments{
 \item{concentration_upper_bound}{A scalar numeric value representing
@@ -120,7 +124,7 @@ cv_info <- cross_validate_concentration(
 
 # Get the cross-validated concentration value.
 
-cat("cross-validated concentration value: \\n")
+cat("cross-validated concentration value: \n")
 print(cv_info$concentration)
 }
 \references{
@@ -130,11 +134,12 @@ Journal of the American Statistical Association,
 DOI: \href{https://doi.org/10.1080/01621459.2017.1421542}{10.1080/01621459.2017.1421542}
 }
 \seealso{
-Other Regression functions: \code{\link{fit_regression}},
-  \code{\link{get_equally_spaced_points}},
-  \code{\link{get_skew_symmetric_matrix}},
-  \code{\link{simulate_regression}},
-  \code{\link{simulate_rigid_regression}},
-  \code{\link{weight_explanatory_points}}
+Other Regression functions: 
+\code{\link{fit_regression}()},
+\code{\link{get_equally_spaced_points}()},
+\code{\link{get_skew_symmetric_matrix}()},
+\code{\link{simulate_regression}()},
+\code{\link{simulate_rigid_regression}()},
+\code{\link{weight_explanatory_points}()}
 }
-
+\concept{Regression functions}
