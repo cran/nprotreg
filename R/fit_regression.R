@@ -22,7 +22,17 @@
 #' a non \code{NULL} numerical \emph{m}-by-\emph{n} matrix whose \emph{j}-th column contains
 #' the weights assigned to the explanatory points while analyzing the
 #' \emph{j}-th evaluation point.
-#'
+#' 
+#' Function \code{fit_regression} supports parallel execution.
+#' To setup parallelization, you can exploit the
+#' \href{https://cran.r-project.org/package=doParallel}{doParallel} package.
+#' Otherwise, \code{fit_regression}  will be executed sequentially and, when called the 
+#' first time, you will receive the following 
+#' 
+#' \code{## Warning: executing \%dopar\% sequentially: no parallel backend registered}
+#' 
+#' This is completely safe and by design.
+#' 
 #' @param evaluation_points An \emph{n}-by-3 matrix whose rows contain
 #' the Cartesian coordinates of the points at which the regression
 #' will be estimated.
@@ -64,7 +74,7 @@
 #' @references Marco Di Marzio, Agnese Panzera & Charles C. Taylor (2018)
 #' Nonparametric rotations for sphere-sphere regression,
 #' Journal of the American Statistical Association,
-#' DOI: \href{https://doi.org/10.1080/01621459.2017.1421542}{10.1080/01621459.2017.1421542}
+#' <doi:10.1080/01621459.2017.1421542>.
 fit_regression <- function(
   evaluation_points,
   explanatory_points,
@@ -116,9 +126,9 @@ fit_regression <- function(
     explanatory_points,
     concentration
   )
-
+  
   explanatory_points_sequence <-
-    get_explanatory_points_sequence(
+    get_explanatory_points_sequence_par(
       explanatory_points,
       transposed_response_points,
       concentration,
@@ -127,7 +137,7 @@ fit_regression <- function(
       local_rotation_modeler,
       allow_reflections
   )
-
+  
   fit_info <- vector(mode = "list", length = number_of_iterations)
   for (s in 1:number_of_iterations) {
     fit_info[[s]] <- list(
@@ -161,7 +171,7 @@ fit_regression <- function(
 # This is a generalization of the algorithm
 # Di Marzio et al. (2018) refer to as 1.
 # Here it is parameterized w.r.t.
-# to a generic local rotation modeler.
+# a generic local rotation modeler.
 #
 # This function expects the response points in a transposed form,
 # in order to enhance the performance of rotation estimations
@@ -229,6 +239,8 @@ fit_iterative_regression <- function(
 # Gets the sequence of explanatory points matrices needed to
 # to implement Algorithm 1 for iterative rotation fitting.
 #
+# This function supports parallel execution (parallel version).
+#
 # This function expects the response points in a transposed form,
 # in order to enhance the performance of rotation estimations
 # for one-term models.
@@ -264,7 +276,7 @@ fit_iterative_regression <- function(
 # \code{explanatory_points}, an \emph{m}-by-\emph{3} matrix whose rows contain
 # the Cartesian coordinates of the points exploited as explanatory at
 # iteration \code{s}.
-get_explanatory_points_sequence <- function(
+get_explanatory_points_sequence_par <- function(
   explanatory_points,
   transposed_response_points,
   concentration,
@@ -293,24 +305,22 @@ get_explanatory_points_sequence <- function(
 
     for (s in 2:number_of_iterations) {
 
-      iteration_explanatory_points <- matrix(
-        nrow = number_of_explanatory_points,
-        ncol = 3
-      )
-
       iteration_evaluation_points <- explanatory_points_sequence[[s - 1]]$explanatory_points
 
-      for (i in 1:number_of_explanatory_points) {
-        iteration_fitted_response_point <- fit_iterative_regression(
-        iteration_evaluation_points[i, ], #explanatory_points[i, ],
-        explanatory_points_sequence[s - 1],
-        transposed_response_points,
-        evaluation_specific_explanatory_point_weights[, i],
-        local_rotation_modeler,
-        allow_reflections)
+      i <- NULL
+      iteration_explanatory_points <- 
+        foreach(i = 1:number_of_explanatory_points, .combine = "rbind") %dopar% {
+          iteration_fitted_response_point <- fit_iterative_regression(
+          iteration_evaluation_points[i, ],
+          explanatory_points_sequence[s - 1],
+          transposed_response_points,
+          evaluation_specific_explanatory_point_weights[, i],
+          local_rotation_modeler,
+          allow_reflections)
 
-        iteration_explanatory_points[i, ] <- iteration_fitted_response_point
+        iteration_fitted_response_point
       }
+
       explanatory_points_sequence[[s]]$explanatory_points <- iteration_explanatory_points
     }
   }

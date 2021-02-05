@@ -23,6 +23,8 @@
 #' }
 #' @docType package
 #' @name nprotreg
+#' @importFrom foreach foreach
+#' @importFrom foreach %dopar%
 #' @importFrom methods new
 #' @importFrom stats nlm
 #' @importFrom stats optimize

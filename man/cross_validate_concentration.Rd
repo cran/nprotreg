@@ -131,7 +131,7 @@ print(cv_info$concentration)
 Marco Di Marzio, Agnese Panzera & Charles C. Taylor (2018)
 Nonparametric rotations for sphere-sphere regression,
 Journal of the American Statistical Association,
-DOI: \href{https://doi.org/10.1080/01621459.2017.1421542}{10.1080/01621459.2017.1421542}
+<doi:10.1080/01621459.2017.1421542>.
 }
 \seealso{
 Other Regression functions: 

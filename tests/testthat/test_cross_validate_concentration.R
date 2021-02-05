@@ -919,7 +919,7 @@ test_that("cross_validate_concentration", {
   )
 
   # Cross-validate concentration
-
+  
   cv_info <- cross_validate_concentration(
     concentration_upper_bound = 1.0,
     explanatory_points = explanatory_points,

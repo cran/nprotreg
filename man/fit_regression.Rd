@@ -85,6 +85,16 @@ It is also expected that \code{weights_generator} will return
 a non \code{NULL} numerical \emph{m}-by-\emph{n} matrix whose \emph{j}-th column contains
 the weights assigned to the explanatory points while analyzing the
 \emph{j}-th evaluation point.
+
+Function \code{fit_regression} supports parallel execution.
+To setup parallelization, you can exploit the
+\href{https://cran.r-project.org/package=doParallel}{doParallel} package.
+Otherwise, \code{fit_regression}  will be executed sequentially and, when called the 
+first time, you will receive the following 
+
+\code{## Warning: executing \%dopar\% sequentially: no parallel backend registered}
+
+This is completely safe and by design.
 }
 \examples{
 library(nprotreg)
@@ -266,7 +276,7 @@ for (i in 1:dim(evaluation_spherical_coords)[1]) {
 Marco Di Marzio, Agnese Panzera & Charles C. Taylor (2018)
 Nonparametric rotations for sphere-sphere regression,
 Journal of the American Statistical Association,
-DOI: \href{https://doi.org/10.1080/01621459.2017.1421542}{10.1080/01621459.2017.1421542}
+<doi:10.1080/01621459.2017.1421542>.
 }
 \seealso{
 Other Regression functions: 

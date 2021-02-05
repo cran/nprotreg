@@ -1070,7 +1070,7 @@ test_that("fit_regression", {
   # fit the regression.
 
   #  A. number_of_expansion_terms = 1, number_of_iterations = 1
-
+  
   actual <- fit_regression(
     evaluation_points,
     explanatory_points,

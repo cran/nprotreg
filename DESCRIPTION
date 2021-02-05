@@ -1,6 +1,6 @@
 Package: nprotreg
 Title: Nonparametric Rotations for Sphere-Sphere Regression
-Version: 1.0.1
+Version: 1.1.0
 Authors@R: c(
     person(c("Charles","C."), "Taylor", email = "charles@maths.leeds.ac.uk", 
     role = c("aut")),
@@ -20,12 +20,12 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Suggests: testthat
-Imports: methods, stats
+Imports: foreach, methods, stats
 NeedsCompilation: no
-Packaged: 2020-07-20 17:41:02 UTC; giova
+Packaged: 2021-02-05 15:07:54 UTC; giova
 Author: Charles C. Taylor [aut],
   Giovanni Lafratta [aut, cre],
   Stefania Fensore [aut]
 Maintainer: Giovanni Lafratta <giovanni.lafratta@unich.it>
 Repository: CRAN
-Date/Publication: 2020-07-21 09:10:03 UTC
+Date/Publication: 2021-02-05 15:50:06 UTC
