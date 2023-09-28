@@ -1,4 +1,4 @@
-5900ce848fe56c192b8f50cca9b58d71 *DESCRIPTION
+c448bdfce3e60c4f68722c39846474d3 *DESCRIPTION
 ab4bb3f76b59543394acd1afbeccb96c *LICENSE
 7de88c996ebde5312913464b33c18b3b *NAMESPACE
 6a0acdd2a76d54afb0b532dd0e6ce280 *NEWS.md
@@ -12,7 +12,7 @@ c14871d9e3cd3d02ad8323a00f88b7be *R/cross_validate_concentration.R
 9736525c870ed1e3878df8e484acf69c *R/internal_skew_symmetric_expm.R
 8474e22dc27086248046e80c7e6bf3bb *R/internal_validate_conditions.R
 62aafec29f6bbd895201d398ebd00d5d *R/internal_validate_parameters.R
-8f7ae6ff205364dc5301cb8e331eb4da *R/nprotreg.R
+6753c4a5df5dad56479b24fea924d688 *R/nprotreg.R
 ccd2533f5a416076187317183701f293 *R/simulate_regression.R
 320c12e4c12bd0bc790c369bc0f17276 *R/simulate_rigid_regression.R
 c4a59cab9291df580e1fdef9e0317df7 *R/weight_explanatory_points.R
@@ -27,14 +27,14 @@ a81627eeb4af86a52aa8e72c6dbb8f5d *man/fit_regression.Rd
 e3ce9474f04634b85c45857b9a2d5a52 *man/get_equally_spaced_points.Rd
 885600ae4a8e2a4a15c012aeaae7ec0c *man/get_skew_symmetric_matrix.Rd
 f2b0f0f1d7c7e70b3100f31995ac6894 *man/logm.Rd
-c0ffd7a057f91c088d3bee266007efcc *man/nprotreg.Rd
+c6eecbaa6ec79af53d1ee8d1327a731d *man/nprotreg.Rd
 720fbe847f18800224d7130564a95a2d *man/simulate_regression.Rd
 795c40f9070a821be608bcc961155ee4 *man/simulate_rigid_regression.Rd
 5736f16ede886ca6ae8bfe7e9011474d *man/weight_explanatory_points.Rd
 1d84b035c230ae5a95e23c31613fbd1e *tests/testthat.R
 b33038965f13c8ca0ce55219abe8cad4 *tests/testthat/test_convert_cartesian_to_spherical.R
 e36d67780c10108fee24a792bc01b840 *tests/testthat/test_convert_spherical_to_cartesian.R
-5896d0e2a0973d3926ea0d0be5ac608a *tests/testthat/test_cross_validate_concentration.R
+5860c1039c4bc1f143d1bfd223933d05 *tests/testthat/test_cross_validate_concentration.R
 37a184623dd26326eee40ddcafd584c0 *tests/testthat/test_fit_regression.R
 84f698c280deb1050ff1bf8208d6ffca *tests/testthat/test_get_equally_spaced_points.R
 f48fe77d0c0734edef6efc8dcaac4293 *tests/testthat/test_get_skew_symmetric_matrix.R

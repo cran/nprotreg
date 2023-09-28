@@ -3,6 +3,7 @@
 \docType{package}
 \name{nprotreg}
 \alias{nprotreg}
+\alias{nprotreg-package}
 \title{nprotreg: Nonparametric Rotations for Sphere-Sphere Regression.}
 \description{
 The nprotreg package provides several categories of functions.

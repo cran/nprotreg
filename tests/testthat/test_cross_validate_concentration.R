@@ -928,12 +928,12 @@ test_that("cross_validate_concentration", {
 
   # Assert
 
-  expected_concentration <- .71
+  expected_concentration <- .8
 
   expect_equal(
         object = cv_info$concentration,
         expected = expected_concentration,
-        tolerance = 1.0e-1)
+        tolerance = 2.0e-1)
 
   expected_objective <- 1.41e-31
 

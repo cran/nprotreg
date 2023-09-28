@@ -23,6 +23,7 @@
 #' }
 #' @docType package
 #' @name nprotreg
+#' @aliases nprotreg-package
 #' @importFrom foreach foreach
 #' @importFrom foreach %dopar%
 #' @importFrom methods new
